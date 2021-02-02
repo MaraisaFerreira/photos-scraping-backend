@@ -41,5 +41,5 @@ const scraping = async () => {
 	}
 };
 
-/* exporta a função */
+/* exporta a função  */
 module.exports = { scraping };
