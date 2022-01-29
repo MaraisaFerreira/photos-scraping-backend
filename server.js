@@ -21,7 +21,6 @@ app.listen(9090, () => {
 	console.log('WebServer funcionando na porta 9090...');
 });
 
-/* retorna os links das fotos */
 app.get('/nasa-photos', async (req, res) => {
 	await scraping.scraping();
 	fs.readFile('imgs_source.json', 'utf8', (err, data) => {
