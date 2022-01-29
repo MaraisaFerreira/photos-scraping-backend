@@ -10,9 +10,7 @@ const scraping = async () => {
 			'https://facebook.com/pg/nasasolarsystem/photos/?tab=album&album_id=164320877917'
 		);
 
-		/* executa isso no browser */
 		const imgsList = await page.evaluate(() => {
-			/* get imgs */
 			const nodeList = document.querySelectorAll('div._2eea a img.img');
 			const imgsArray = [...nodeList];
 			console.log(imgsArray);
@@ -23,7 +21,6 @@ const scraping = async () => {
 			return imgsList;
 		});
 
-		/* escreve os links das imgs em um arq JSON local */
 		fs.writeFile(
 			'imgs_source.json',
 			JSON.stringify(imgsList, null, 2),
@@ -41,5 +38,4 @@ const scraping = async () => {
 	}
 };
 
-/* exporta a função  */
 module.exports = { scraping };
